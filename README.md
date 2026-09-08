@@ -2,7 +2,7 @@
 
 An interactive 3D MacBook viewer with a minimal interface, built with React, Three.js, and Vinext.
 
-**[Live demo](https://silver-macbook-studio.manu-development-app.chatgpt.site/)**
+**[Live demo](https://x.com/emanueledpt/status/2097293889610903703?s=20)**
 
 - Drag to orbit, scroll or pinch to zoom.
 - Open and close the articulated lid with a slider or presets.
@@ -24,7 +24,7 @@ npm run dev
 
 Open the local URL printed by the development server, usually http://localhost:3000.
 
-The asset command downloads the demo model and image into ignored local files. **The code is MIT licensed; Apple media is separate and is not included in this repository.** Read [third-party notices](THIRD_PARTY_NOTICES.md) before reusing the media. The download currently depends on the live demo remaining available. Without the model file, the viewer will display a loading error.
+The asset command downloads the demo model and image into ignored local files. **The code is MIT licensed; Apple media is separate and is not included in this repository.** Read [third-party notices](THIRD_PARTY_NOTICES.md) before reusing the media. The download currently depends on the original hosted viewer remaining available. Without the model file, the viewer will display a loading error.
 
 The Google fonts used by the page may require network access during the first build.
 
