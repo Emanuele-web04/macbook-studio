@@ -1,0 +1,12 @@
+{
+  "source": "https://www.apple.com/105/media/us/macbook-pro/2023/232a2dbf-5898-4fd1-a350-6a7c5c2e31c9/ar/macbook_pro_m3_pro_16_silver.usdz",
+  "model": "Apple MacBook Pro 16-inch M3 Pro (2023), silver, US keyboard",
+  "requestedModel": "MacBook Pro 16-inch M5 Pro",
+  "geometry": "Original Apple geometry and material maps; converted to glTF, calibrated to 355.7 x 248.1 x 16.8 mm, with an articulated lid. Not a certified M5 CAD model.",
+  "closedDimensionsMm": [
+    355.7,
+    16.800000000000008,
+    248.1
+  ],
+  "meshes": 61
+}
