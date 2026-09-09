@@ -4,8 +4,8 @@ export function createMaterials() {
   const metal = new T.MeshPhysicalMaterial({
     color: 0xbfc1c5,
     metalness: 0.92,
-    roughness: 0.36,
-    clearcoat: 0.08,
+    roughness: 0.43,
+    clearcoat: 0.025,
     clearcoatRoughness: 0.45,
   });
   // Fine machining grain is generated in the shader. No photographic texture maps.
@@ -38,26 +38,32 @@ export function createMaterials() {
     metalness: 0.15,
   });
   const key = new T.MeshPhysicalMaterial({
-    color: 0x16171a,
-    roughness: 0.48,
-    metalness: 0.05,
-    clearcoat: 0.12,
+    color: 0x08090b,
+    roughness: 0.64,
+    metalness: 0,
+    clearcoat: 0,
+    specularIntensity: 0.25,
   });
   const rubber = new T.MeshStandardMaterial({
     color: 0x161618,
     roughness: 0.95,
   });
   const glass = new T.MeshPhysicalMaterial({
-    color: 0x08090b,
-    roughness: 0.18,
-    metalness: 0.15,
-    clearcoat: 1,
+    color: 0x040405,
+    roughness: 0.25,
+    metalness: 0,
+    specularIntensity: 0.3,
+    clearcoat: 0.12,
     clearcoatRoughness: 0.07,
   });
   const logo = new T.MeshPhysicalMaterial({
-    color: 0x141416,
-    metalness: 1,
-    roughness: 0.15,
+    color: 0x050506,
+    metalness: 0.55,
+    roughness: 0.18,
+    envMapIntensity: 0.45,
+    polygonOffset: true,
+    polygonOffsetFactor: -1,
+    polygonOffsetUnits: -2,
     side: T.DoubleSide,
   });
   const gold = new T.MeshStandardMaterial({
@@ -66,7 +72,7 @@ export function createMaterials() {
     roughness: 0.3,
   });
   const silver = new T.Color(0xbfc1c5),
-    gray = new T.Color(0x66676b);
+    gray = new T.Color(0x444549);
   return {
     metal,
     trackpad,

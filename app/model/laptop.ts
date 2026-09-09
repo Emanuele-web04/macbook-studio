@@ -4,6 +4,7 @@ import { createMaterials } from './materials';
 import { createKeyboard, createSpeakers } from './keyboard';
 import { createPorts } from './ports';
 import { createDisplayTexture } from './display';
+import { frontEdge } from './front-edge';
 
 export const DIMENSIONS = {
   width: 3.557,
@@ -158,26 +159,7 @@ export function createLaptop() {
       g.rotateX(-Math.PI / 2);
       mesh(root, 'Rounded unibody corner', g, m.metal, 0, 0.0745, 0);
     }
-  const front = new T.Shape(),
-    edge = w / 2 - r;
-  front.moveTo(-edge, 0.027);
-  front.lineTo(edge, 0.027);
-  front.lineTo(edge, 0.124);
-  front.lineTo(0.286, 0.124);
-  front.bezierCurveTo(0.272, 0.124, 0.264, 0.104, 0.236, 0.102);
-  front.lineTo(-0.236, 0.102);
-  front.bezierCurveTo(-0.264, 0.104, -0.272, 0.124, -0.286, 0.124);
-  front.lineTo(-edge, 0.124);
-  front.closePath();
-  mesh(
-    root,
-    'Front wall and finger scoop',
-    extrude(front, 0.022),
-    m.metal,
-    0,
-    0,
-    d / 2 - 0.011,
-  );
+  mesh(root, 'Front wall and finger scoop', frontEdge(w, d), m.metal);
   const scoop = new T.Shape();
   scoop.moveTo(-0.285, -d / 2);
   scoop.lineTo(0.285, -d / 2);
@@ -303,15 +285,13 @@ export function createLaptop() {
     -0.001,
     center,
   );
-  mesh(
-    hinge,
-    'Display bezel',
-    slab(w - 0.056, d - 0.056, 0.003, 0.054),
-    m.glass,
-    0,
-    0.0015,
-    center,
-  );
+  // A real bezel frame leaves the display aperture empty. Stacking a full
+  // glass slab behind an almost coplanar screen causes depth-buffer artifacts.
+  const bezel = outline(w - 0.056, d - 0.056, 0.054);
+  hole(bezel, 3.456, 2.245, 0.042, 0, -(1.2245 - center));
+  const bezelGeometry = extrude(bezel, 0.003);
+  bezelGeometry.rotateX(-Math.PI / 2);
+  mesh(hinge, 'Display bezel', bezelGeometry, m.glass, 0, 0.0015, center);
   const displayTexture = createDisplayTexture();
   const screenMaterial = new T.MeshBasicMaterial({
     map: displayTexture,
@@ -323,7 +303,7 @@ export function createLaptop() {
     displaySurface(3.456, 2.245, 0.042),
     screenMaterial,
     0,
-    -0.0001,
+    -0.0005,
     1.2245,
   );
   screen.castShadow = false;

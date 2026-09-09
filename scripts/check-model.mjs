@@ -29,7 +29,10 @@ for (const file of fs
 const drawing = new Proxy(
   {},
   {
-    get: (object, key) => object[key] ?? (() => {}),
+    get: (object, key) =>
+      key === 'createLinearGradient'
+        ? () => ({ addColorStop() {} })
+        : (object[key] ?? (() => {})),
     set: (object, key, value) => {
       object[key] = value;
       return true;
@@ -99,6 +102,14 @@ for (const [side, z] of [
     `Port at ${side},${z} must be an opening`,
   );
 }
+// The screen aperture must be empty: a full coplanar bezel slab creates
+// visible rectangles and flickering despite otherwise valid geometry.
+ray.set(new T.Vector3(0, 0.125, 0.027), new T.Vector3(0, 1, 0));
+assert.equal(
+  ray.intersectObject(laptop.root.getObjectByName('Display bezel')).length,
+  0,
+  'The bezel must not cover the display aperture',
+);
 const contact = new T.Vector3(1, -0.002, 2.38);
 laptop.setLid(0);
 laptop.root.updateMatrixWorld(true);
@@ -129,7 +140,7 @@ for (const fps of [30, 60, 120]) {
   assert.equal(angle, 0, 'Closure must finish at exact contact');
 }
 laptop.materials.setFinish(1);
-assert.equal(laptop.materials.metal.color.getHex(), 0x66676b);
+assert.equal(laptop.materials.metal.color.getHex(), 0x444549);
 laptop.materials.setFinish(0);
 assert.equal(laptop.materials.metal.color.getHex(), 0xbfc1c5);
 console.log(

@@ -31,7 +31,7 @@ type Props = {
 const viewpoints: Record<string, [number, number, number]> = {
   Perspective: [-5.3, 3.5, 8.2],
   Front: [0, 1.9, 8.7],
-  Top: [0, 9, 0.001],
+  Top: [0, 9, 0.4],
   Back: [3.7, 2.9, -7.8],
 };
 
@@ -88,12 +88,12 @@ const MacBookScene = forwardRef<SceneHandle, Props>(
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       renderer.setClearColor(0xffffff, 0);
       renderer.toneMapping = T.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.05;
+      renderer.toneMappingExposure = 0.92;
       renderer.shadowMap.enabled = true;
-      renderer.shadowMap.type = T.PCFSoftShadowMap;
+      renderer.shadowMap.type = T.PCFShadowMap;
       container.appendChild(renderer.domElement);
       const scene = new T.Scene(),
-        camera = new T.PerspectiveCamera(32, 1, 0.025, 80);
+        camera = new T.PerspectiveCamera(32, 1, 0.12, 60);
       const controls = new OrbitControls(camera, renderer.domElement);
       controls.enablePan = false;
       controls.enableDamping = true;
@@ -109,11 +109,11 @@ const MacBookScene = forwardRef<SceneHandle, Props>(
         pmrem = new T.PMREMGenerator(renderer);
       const environment = pmrem.fromScene(room, 0.04);
       scene.environment = environment.texture;
-      scene.environmentIntensity = 0.85;
+      scene.environmentIntensity = 0.7;
       room.dispose();
       pmrem.dispose();
-      scene.add(new T.HemisphereLight(0xffffff, 0xb6b9c4, 0.3));
-      const key = new T.DirectionalLight(0xfffaf5, 2.1);
+      scene.add(new T.HemisphereLight(0xffffff, 0xbababa, 0.3));
+      const key = new T.DirectionalLight(0xfffaf5, 1.5);
       key.position.set(-3, 7, 4);
       key.castShadow = true;
       key.shadow.mapSize.set(2048, 2048);
@@ -125,10 +125,10 @@ const MacBookScene = forwardRef<SceneHandle, Props>(
         near: 0.1,
         far: 20,
       });
-      key.shadow.normalBias = 0.002;
-      key.shadow.bias = -0.00002;
+      key.shadow.normalBias = 0.001;
+      key.shadow.bias = -0.000006;
       scene.add(key);
-      const fill = new T.DirectionalLight(0xe7efff, 0.5);
+      const fill = new T.DirectionalLight(0xffffff, 0.5);
       fill.position.set(4, 3, -4);
       scene.add(fill);
       const floor = new T.Mesh(
@@ -153,8 +153,8 @@ const MacBookScene = forwardRef<SceneHandle, Props>(
         lastTime = 0;
       function fittedDistance() {
         return Math.max(
-          7.5,
-          4.35 /
+          7.8,
+          5.4 /
             (2 *
               Math.tan(T.MathUtils.degToRad(camera.fov / 2)) *
               camera.aspect),
