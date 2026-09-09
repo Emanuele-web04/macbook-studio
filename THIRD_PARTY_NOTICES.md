@@ -2,15 +2,15 @@
 
 ## Model and artwork provenance
 
-The current viewer constructs its geometry and materials in `app/model`. The model contains no imported Apple model, converted geometry, photographic texture, wallpaper download, or macOS icon pack. Key legends and screen artwork are drawn locally in code. User-provided photographs were used only as visual references and are not distributed.
+The current viewer constructs its geometry and materials in `app/model`. The model contains no imported Apple model, converted geometry, photographic texture, wallpaper download, or macOS icon pack. Screen artwork and ordinary key legends are drawn locally in code. The function row uses the separately licensed symbols described below. User-provided photographs were used only as visual references and are not distributed.
 
 The original implementation is covered by the repository's MIT license. This does not license Apple's trademarks or the underlying product design. Apple and MacBook are trademarks of Apple Inc. The project is independent and is not affiliated with or endorsed by Apple. The reconstructed dimensions and details are a visual study, not certified manufacturing data.
 
 Earlier revisions referenced a separate Apple demonstration asset through a download script. That loader and download workflow have been removed from the current version.
 
-## Apple SF Symbols in the viewer controls
+## Apple SF Symbols on the F1–F12 keys
 
-The nine SVG controls in `public/symbols/` come from Apple's official SF Symbols application. They are Apple artwork, not independently authored icons, and are excluded from the repository's MIT license. The unmodified exports, source hashes, processing details, and accompanying Apple license are retained in `assets/sf-symbols/`. See its [notice](assets/sf-symbols/NOTICE.md); attribution does not grant additional rights for web use or redistribution.
+The twelve F1–F12 symbols in `public/symbols/` come from Apple's official SF Symbols application. Their unmodified SVG path data is bundled in `app/model/function-key-symbols.ts` and drawn into the keyboard texture. The viewer controls use Lucide icons. They are Apple artwork, not independently authored icons, and are excluded from the repository's MIT license. The unmodified exports, source hashes, processing details, and accompanying Apple license are retained in `assets/sf-symbols/`. See its [notice](assets/sf-symbols/NOTICE.md); attribution does not grant additional rights for web use or redistribution.
 
 ## UI components and dependencies
 

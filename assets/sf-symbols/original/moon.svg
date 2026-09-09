@@ -5,14 +5,13 @@ PUBLIC "-//W3C//DTD SVG 1.1//EN"
        "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3300 2200">
  <!--symbol: "symbol", point size: 100.0, font version: "22.0d4e4", template writer version: "138.0.0"-->
- <style>.defaults {-sfsymbols-draw-reverses-motion-groups:true}
+ <style>.defaults {-sfsymbols-variable-value-mode:color;-sfsymbols-draw-reverses-motion-groups:true}
 
-.monochrome-0 {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:laptopcomputer}
+.monochrome-0 {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:moon}
 
-.multicolor-0:tintColor {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:laptopcomputer}
+.multicolor-0:tintColor {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:moon}
 
-.hierarchical-0:tertiary {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:laptopcomputer}
-.hierarchical-1:primary {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:laptopcomputer}
+.hierarchical-0:primary {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:moon}
 
 .SFSymbolsPreviewWireframe {fill:none;opacity:1.0;stroke:black;stroke-width:0.5}
 </style>
@@ -83,25 +82,22 @@ PUBLIC "-//W3C//DTD SVG 1.1//EN"
   </g>
   <line id="Baseline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1556" y2="1556"/>
   <line id="Capline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1485.54" y2="1485.54"/>
-  <line id="right-margin-Black-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="3005.18" x2="3005.18" y1="600.785" y2="720.121"/>
-  <line id="left-margin-Black-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="2861.62" x2="2861.62" y1="600.785" y2="720.121"/>
-  <line id="right-margin-Regular-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="1515.74" x2="1515.74" y1="600.785" y2="720.121"/>
-  <line id="left-margin-Regular-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="1383.95" x2="1383.95" y1="600.785" y2="720.121"/>
-  <line id="right-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="620.292" x2="620.292" y1="600.785" y2="720.121"/>
-  <line id="left-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="499.131" x2="499.131" y1="600.785" y2="720.121"/>
+  <line id="right-margin-Black-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="2979.76" x2="2979.76" y1="600.785" y2="720.121"/>
+  <line id="left-margin-Black-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="2887.04" x2="2887.04" y1="600.785" y2="720.121"/>
+  <line id="right-margin-Regular-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="1495.33" x2="1495.33" y1="600.785" y2="720.121"/>
+  <line id="left-margin-Regular-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="1404.36" x2="1404.36" y1="600.785" y2="720.121"/>
+  <line id="right-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="603.582" x2="603.582" y1="600.785" y2="720.121"/>
+  <line id="left-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="515.84" x2="515.84" y1="600.785" y2="720.121"/>
  </g>
  <g id="Symbols">
-  <g id="Black-S" transform="matrix(1 0 0 1 2861.62 696)">
-   <path class="monochrome-0 multicolor-0:tintColor hierarchical-1:primary SFSymbolsPreviewWireframe" d="M9.76562-6.44531C9.76562-2.39258 13.1836 0.976562 17.2363 0.976562L126.318 0.976562C130.371 0.976562 133.789-2.39258 133.789-6.44531C133.789-10.498 130.371-13.8672 126.318-13.8672L119.629-13.8672L119.629-57.4219C119.629-66.3086 114.404-71.5332 105.518-71.5332L38.0371-71.5332C29.1504-71.5332 23.9258-66.3086 23.9258-57.4219L23.9258-13.8672L17.2363-13.8672C13.1836-13.8672 9.76562-10.498 9.76562-6.44531Z"/>
-   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:tertiary hierarchical-1:primary SFSymbolsPreviewWireframe" d="M38.0859-13.8672L38.0859-54.2969C38.0859-56.543 39.1113-57.373 41.1621-57.373L102.393-57.373C104.443-57.373 105.469-56.543 105.469-54.2969L105.469-13.8672Z"/>
+  <g id="Black-S" transform="matrix(1 0 0 1 2887.04 696)">
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M47.6562 4.78516C63.8672 4.78516 78.4668-4.78516 85.0586-19.6289C87.8418-25.9277 83.252-29.248 78.4668-26.9043C74.6094-25.0488 69.5312-23.877 65.3809-23.877C46.1426-23.877 35.4004-34.6191 35.4004-53.8574C35.4004-57.9102 36.5723-62.8906 38.3789-66.748C40.918-72.0703 36.8164-76.123 30.957-73.5352C16.6504-67.1875 6.83594-52.7832 6.83594-36.0352C6.83594-13.4766 25.1465 4.78516 47.6562 4.78516ZM47.6562-7.91016C32.1289-7.91016 19.5312-20.5078 19.5312-36.0352C19.5312-40.7715 20.752-45.3125 22.8516-49.2188C22.9004-48.8281 22.9004-48.7305 22.9492-48.291C24.9512-27.2949 38.4766-13.623 59.375-11.4746C59.9121-11.4258 60.498-11.377 61.084-11.3281C57.0801-9.13086 52.5391-7.91016 47.6562-7.91016Z"/>
   </g>
-  <g id="Regular-S" transform="matrix(1 0 0 1 1383.95 696)">
-   <path class="monochrome-0 multicolor-0:tintColor hierarchical-1:primary SFSymbolsPreviewWireframe" d="M9.76562-8.20312C9.76562-5.61523 11.9141-3.4668 14.4531-3.4668L117.334-3.4668C119.922-3.4668 122.021-5.61523 122.021-8.20312C122.021-10.8398 119.922-12.9883 117.334-12.9883L108.936-12.9883L108.936-58.6426C108.936-64.1113 106.006-66.9434 100.537-66.9434L31.25-66.9434C26.123-66.9434 22.8516-64.1113 22.8516-58.6426L22.8516-12.9883L14.4531-12.9883C11.9141-12.9883 9.76562-10.8398 9.76562-8.20312Z"/>
-   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:tertiary hierarchical-1:primary SFSymbolsPreviewWireframe" d="M29.9316-12.9883L29.9316-56.543C29.9316-58.7891 31.0059-59.9121 33.252-59.9121L98.5352-59.9121C100.781-59.9121 101.904-58.7891 101.904-56.543L101.904-12.9883Z"/>
+  <g id="Regular-S" transform="matrix(1 0 0 1 1404.36 696)">
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M47.2656 3.75977C64.1113 3.75977 77.6367-6.39648 83.6426-19.043C85.1074-22.1191 83.1055-24.0723 80.3223-23.2422C77.3926-22.3145 72.8027-21.582 68.9453-21.582C46.0449-21.582 32.8613-34.7168 32.8613-57.6172C32.8613-61.6211 33.8379-66.6992 35.0586-69.873C36.3281-73.0957 34.082-75.0488 31.0547-73.6816C16.4551-67.2363 6.83594-52.7832 6.83594-36.6699C6.83594-14.3555 24.9512 3.75977 47.2656 3.75977ZM47.2656-2.97852C28.7109-2.97852 13.623-18.1152 13.623-36.6699C13.623-47.2656 18.6523-56.9336 26.5625-63.1348C26.2695-61.2305 26.123-59.4238 26.123-57.6172C26.123-30.957 42.2852-14.7949 68.9453-14.7949C70.3125-14.7949 71.7285-14.8926 72.998-15.0391C67.0898-7.95898 58.0078-2.97852 47.2656-2.97852Z"/>
   </g>
-  <g id="Ultralight-S" transform="matrix(1 0 0 1 499.131 696)">
-   <path class="monochrome-0 multicolor-0:tintColor hierarchical-1:primary SFSymbolsPreviewWireframe" d="M9.76562-9.38378C9.76562-7.88572 10.7788-6.82712 12.2735-6.82712L108.888-6.82712C110.34-6.82712 111.396-7.88572 111.396-9.38378C111.396-10.8398 110.34-11.8984 108.888-11.8984L100.535-11.8984L100.535-56.2813C100.535-61.1143 98.0591-63.5376 93.2715-63.5376L27.8897-63.5376C23.126-63.5376 20.6265-61.1143 20.6265-56.2813L20.6265-11.8984L12.2735-11.8984C10.7788-11.8984 9.76562-10.8398 9.76562-9.38378Z"/>
-   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:tertiary hierarchical-1:primary SFSymbolsPreviewWireframe" d="M22.8477-11.8984L22.8477-56.0889C22.8477-59.6064 24.6031-61.3652 28.1661-61.3652L92.9952-61.3652C96.5581-61.3652 98.3169-59.6064 98.3169-56.0889L98.3169-11.8984Z"/>
+  <g id="Ultralight-S" transform="matrix(1 0 0 1 515.84 696)">
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M45.4038 1.48928C61.3413 1.48928 74.9121-8.07665 80.7818-21.6313C81.1568-22.5278 80.7442-23.6182 79.4141-23.0605C76.9839-22.042 71.8491-20.3106 65.5396-20.3106C42.1397-20.3106 29.0469-33.3999 29.0469-56.8452C29.0469-62.4839 30.1143-66.563 32.0615-71.3262C32.5137-72.46 31.8115-73.187 30.646-72.728C20.769-68.9165 6.83594-56.7339 6.83594-37.0786C6.83594-15.8086 24.1338 1.48928 45.4038 1.48928ZM45.4038-0.708026C25.3052-0.708026 9.03666-16.98 9.03666-37.0786C9.03666-54.1225 20.2871-65.1982 29.1054-69.583C27.7226-65.6352 26.8496-61.7851 26.8496-56.8452C26.8496-32.2285 40.9229-18.1552 65.5396-18.1552C70.4487-18.1552 74.6802-19.1611 77.539-20.0796C71.54-8.59472 59.4155-0.708026 45.4038-0.708026Z"/>
   </g>
  </g>
 </svg>

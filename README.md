@@ -4,7 +4,7 @@ An interactive 3D MacBook viewer with an independently written model, built with
 
 **[Live demo](https://x.com/emanueledpt/status/2097293889610903703?s=20)**
 
-The notebook is constructed entirely in code: rounded aluminum panels, 78 individual US ANSI keys, recessed connectors, speaker perforations, trackpad, hinge, feet, screws, and a hand-constructed lid emblem. Metal grain, key legends, and display artwork are generated locally. **No Apple 3D model, textures, product photographs, or wallpaper is loaded or downloaded.** The viewer controls use nine actual Apple SF Symbols, exported as SVG; these assets have a separate Apple license and are not MIT-licensed.
+The notebook is constructed entirely in code: rounded aluminum panels, 78 individual US ANSI keys, recessed connectors, speaker perforations, trackpad, hinge, feet, screws, and a hand-constructed lid emblem. Metal grain, key legends, and display artwork are generated locally. **No Apple 3D model, textures, product photographs, or wallpaper is loaded or downloaded.** The F1–F12 keyboard symbols use twelve actual Apple SF Symbols, exported as SVG; these assets have a separate Apple license and are not MIT-licensed.
 
 - Drag to orbit; scroll or pinch to zoom.
 - Open and close the articulated lid with a slider or presets.
@@ -55,7 +55,7 @@ The production build targets Cloudflare Workers. `npm start` previews it locally
 | `app/model/motion.ts` | Finite lid animation with exact contact |
 | `app/scene.tsx` | Studio lighting, camera, rendering, and resource cleanup |
 | `app/page.tsx` | Viewer controls and immersive mode |
-| `app/sf-symbol.tsx` | Color-inheriting SVG masks for the viewer controls |
+| `app/model/function-key-symbols.ts` | Apple SVG vectors used by the F1–F12 keyboard legends |
 | `assets/sf-symbols/` | Original Apple SVG exports, provenance, and separate license |
 | `app/webmcp.ts` | Optional lid tools for supporting browsers |
 | `scripts/check-model.mjs` | Geometry and motion checks |
@@ -66,4 +66,4 @@ Issues and pull requests are welcome. Run the checks and production build before
 
 ## License
 
-The original source code and procedural artwork are available under [MIT](LICENSE). The Apple SF Symbols in `assets/sf-symbols/` and `public/symbols/` are excluded; Apple's platform and distribution restrictions apply. Their inclusion here does not grant permission for web use or redistribution. See the [SF Symbols notice and accompanying Apple license](assets/sf-symbols/NOTICE.md) before reusing those assets. Apple and MacBook are trademarks of Apple Inc.; the software license does not grant rights to Apple's trademarks or product design. This is an independent, unofficial project, not affiliated with or endorsed by Apple. See [third-party notices](THIRD_PARTY_NOTICES.md) for dependency attribution.
+The original source code and procedural artwork are available under [MIT](LICENSE). The Apple SF Symbols in `assets/sf-symbols/`, `public/symbols/`, and `app/model/function-key-symbols.ts` are excluded; Apple's platform and distribution restrictions apply. Their inclusion here does not grant permission for web use or redistribution. See the [SF Symbols notice and accompanying Apple license](assets/sf-symbols/NOTICE.md) before reusing those assets. Apple and MacBook are trademarks of Apple Inc.; the software license does not grant rights to Apple's trademarks or product design. This is an independent, unofficial project, not affiliated with or endorsed by Apple. See [third-party notices](THIRD_PARTY_NOTICES.md) for dependency attribution.

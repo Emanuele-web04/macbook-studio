@@ -5,13 +5,16 @@ PUBLIC "-//W3C//DTD SVG 1.1//EN"
        "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3300 2200">
  <!--symbol: "symbol", point size: 100.0, font version: "22.0d4e4", template writer version: "138.0.0"-->
- <style>.defaults {-sfsymbols-draw-reverses-motion-groups:true}
+ <style>.defaults {-sfsymbols-variable-value-mode:color;-sfsymbols-draw-reverses-motion-groups:false}
 
-.monochrome-0 {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:minus}
+.monochrome-0 {-sfsymbols-variable-threshold:0.0;-sfsymbols-motion-group:1;-sfsymbols-layer-tags:speaker.wave.1.fill}
+.monochrome-1 {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:speaker.wave.1.fill}
 
-.multicolor-0:systemRedColor {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:minus}
+.multicolor-0:tintColor {-sfsymbols-variable-threshold:0.0;-sfsymbols-motion-group:1;-sfsymbols-layer-tags:speaker.wave.1.fill}
+.multicolor-1:tintColor {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:speaker.wave.1.fill}
 
-.hierarchical-0:primary {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:minus}
+.hierarchical-0:secondary {-sfsymbols-variable-threshold:0.0;-sfsymbols-motion-group:1;-sfsymbols-layer-tags:speaker.wave.1.fill}
+.hierarchical-1:primary {-sfsymbols-motion-group:0;-sfsymbols-layer-tags:speaker.wave.1.fill}
 
 .SFSymbolsPreviewWireframe {fill:none;opacity:1.0;stroke:black;stroke-width:0.5}
 </style>
@@ -82,22 +85,25 @@ PUBLIC "-//W3C//DTD SVG 1.1//EN"
   </g>
   <line id="Baseline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1556" y2="1556"/>
   <line id="Capline-L" style="fill:none;stroke:#27AAE1;opacity:1;stroke-width:0.5;" x1="263" x2="3036" y1="1485.54" y2="1485.54"/>
-  <line id="right-margin-Black-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="2977.25" x2="2977.25" y1="600.785" y2="720.121"/>
-  <line id="left-margin-Black-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="2889.55" x2="2889.55" y1="600.785" y2="720.121"/>
-  <line id="right-margin-Regular-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="1491.52" x2="1491.52" y1="600.785" y2="720.121"/>
-  <line id="left-margin-Regular-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="1408.17" x2="1408.17" y1="600.785" y2="720.121"/>
-  <line id="right-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="599.456" x2="599.456" y1="600.785" y2="720.121"/>
-  <line id="left-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="519.966" x2="519.966" y1="600.785" y2="720.121"/>
+  <line id="right-margin-Black-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="2987.14" x2="2987.14" y1="600.785" y2="720.121"/>
+  <line id="left-margin-Black-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="2879.66" x2="2879.66" y1="600.785" y2="720.121"/>
+  <line id="right-margin-Regular-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="1496.3" x2="1496.3" y1="600.785" y2="720.121"/>
+  <line id="left-margin-Regular-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="1403.38" x2="1403.38" y1="600.785" y2="720.121"/>
+  <line id="right-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="601.789" x2="601.789" y1="600.785" y2="720.121"/>
+  <line id="left-margin-Ultralight-S" style="fill:none;stroke:#00AEEF;stroke-width:0.5;opacity:1.0;" x1="517.633" x2="517.633" y1="600.785" y2="720.121"/>
  </g>
  <g id="Symbols">
-  <g id="Black-S" transform="matrix(1 0 0 1 2889.55 696)">
-   <path class="monochrome-0 multicolor-0:systemRedColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M18.1152-26.6602L69.5801-26.6602C74.0234-26.6602 77.9297-30.5664 77.9297-35.2051C77.9297-39.8438 74.0234-43.75 69.5801-43.75L18.1152-43.75C13.916-43.75 9.76562-39.8438 9.76562-35.2051C9.76562-30.5664 13.916-26.6602 18.1152-26.6602Z" data-clipstroke-keyframes="0 8 0 0.6617357 0.16914804 0 1 0.8321479 0.0019368097 0 1 0.32893485 0.49899963"/>
+  <g id="Black-S" transform="matrix(1 0 0 1 2879.66 696)">
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:secondary SFSymbolsPreviewWireframe" d="M79.541-14.8926C82.7148-12.9883 86.4746-13.7695 88.3301-16.3574C92.0898-21.6797 94.2871-28.2227 94.2871-35.2539C94.2871-42.2852 92.0898-48.8281 88.3301-54.1992C86.4746-56.7383 82.7148-57.5195 79.541-55.6152C76.2207-53.6621 75.3418-49.707 78.1738-44.7266C79.7852-41.9434 80.6641-38.6719 80.6641-35.2539C80.6641-31.8359 79.7852-28.5645 78.1738-25.7812C75.3418-20.8008 76.2207-16.8457 79.541-14.8926Z" data-clipstroke-keyframes="0 8 0 0.78724384 0.28598118 0 1 0.47935796 0.6725036 0 1 0.8994932 0.094594836"/>
+   <path class="monochrome-1 multicolor-1:tintColor hierarchical-1:primary SFSymbolsPreviewWireframe" d="M58.1055 1.36719C62.5977 1.36719 66.0645-2.09961 66.0645-6.5918L66.0645-63.8184C66.0645-68.3105 62.5977-71.7773 58.1055-71.7773C55.4199-71.7773 53.1738-70.8008 50.3906-68.2129L35.8398-54.7852C35.6445-54.6387 35.498-54.541 35.3027-54.541L25-54.541C17.3828-54.541 13.1836-50.0977 13.1836-42.2363L13.1836-28.1738C13.1836-20.3125 17.3828-15.8691 25-15.8691L35.2539-15.8691C35.4492-15.8691 35.5957-15.8691 35.791-15.7227L50.3906-2.19727C53.0762 0.292969 55.2246 1.36719 58.1055 1.36719Z"/>
   </g>
-  <g id="Regular-S" transform="matrix(1 0 0 1 1408.17 696)">
-   <path class="monochrome-0 multicolor-0:systemRedColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M13.7207-31.25L69.6777-31.25C71.7773-31.25 73.584-33.0566 73.584-35.2051C73.584-37.3535 71.7773-39.1602 69.6777-39.1602L13.7207-39.1602C11.5723-39.1602 9.76562-37.3535 9.76562-35.2051C9.76562-33.0566 11.5723-31.25 13.7207-31.25Z" data-clipstroke-keyframes="0 8 0 0.69967616 0.20959066 0 1 0.90963495 0.00039998218 0 1 0.40918174 0.49932528"/>
+  <g id="Regular-S" transform="matrix(1 0 0 1 1403.38 696)">
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:secondary SFSymbolsPreviewWireframe" d="M71.5332-18.7988C72.998-17.8223 75.0488-18.1152 76.2207-19.8242C79.1504-23.7305 80.8594-29.4922 80.8594-35.2539C80.8594-41.0156 79.1504-46.7285 76.2207-50.6836C75.0488-52.3926 72.998-52.6855 71.5332-51.6602C69.7754-50.4395 69.4824-48.291 70.8496-46.4844C72.9004-43.7012 74.0723-39.4531 74.0723-35.2539C74.0723-31.0547 72.8516-26.8555 70.8496-24.0234C69.5312-22.168 69.7754-20.0684 71.5332-18.7988Z" data-clipstroke-keyframes="0 8 0 0.77554524 0.2740916 0 1 0.4815141 0.6226733 0 1 0.9263885 0.0683372"/>
+   <path class="monochrome-1 multicolor-1:tintColor hierarchical-1:primary SFSymbolsPreviewWireframe" d="M53.6621-1.02539C56.3477-1.02539 58.3984-2.97852 58.3984-5.71289L58.3984-64.4531C58.3984-67.1387 56.3477-69.3848 53.5645-69.3848C51.6113-69.3848 50.293-68.5547 48.0957-66.4551L32.0312-51.5137C31.8359-51.3184 31.543-51.1719 31.25-51.1719L20.5566-51.1719C14.9414-51.1719 12.0605-48.291 12.0605-42.2363L12.0605-28.125C12.0605-22.1191 14.9414-19.1895 20.5566-19.1895L31.25-19.1895C31.543-19.1895 31.8359-19.0918 32.0312-18.8965L48.0957-3.66211C50.0977-1.80664 51.709-1.02539 53.6621-1.02539Z"/>
   </g>
-  <g id="Ultralight-S" transform="matrix(1 0 0 1 519.966 696)">
-   <path class="monochrome-0 multicolor-0:systemRedColor hierarchical-0:primary SFSymbolsPreviewWireframe" d="M10.9053-34.02L68.5879-34.02C69.2344-34.02 69.7242-34.5552 69.7242-35.1597C69.7242-35.7642 69.2344-36.2993 68.5879-36.2993L10.9053-36.2993C10.2554-36.2993 9.76562-35.7642 9.76562-35.1597C9.76562-34.5552 10.2554-34.02 10.9053-34.02Z" data-clipstroke-keyframes="0 8 0 0.72986376 0.2409229 0 1 0.9712803 0.00045977655 0 1 0.4703514 0.49948442"/>
+  <g id="Ultralight-S" transform="matrix(1 0 0 1 517.633 696)">
+   <path class="monochrome-0 multicolor-0:tintColor hierarchical-0:secondary SFSymbolsPreviewWireframe" d="M67.7188-19.5708C68.2754-19.23 68.8731-19.3413 69.273-19.8242C72.2027-23.5942 74.275-28.9019 74.275-35.2539C74.275-41.606 72.2027-46.9102 69.273-50.6836C68.8731-51.1665 68.2754-51.2778 67.7188-50.9336C67.2324-50.5303 67.1211-49.8804 67.5347-49.2544C70.6299-45.0635 72.0742-40.8608 72.0742-35.2539C72.0742-29.647 70.6265-25.4478 67.5347-21.2534C67.1245-20.624 67.2324-19.9775 67.7188-19.5708Z" data-clipstroke-keyframes="0 8 0 0.76077867 0.2587881 0 1 0.49422133 0.545781 0 1 0.97389746 0.02546966"/>
+   <path class="monochrome-1 multicolor-1:tintColor hierarchical-1:primary SFSymbolsPreviewWireframe" d="M49.5752-3.47752C51.1709-3.47752 51.9502-4.65868 51.9502-6.12158L51.9502-64.3623C51.9502-65.8218 51.1709-67.0235 49.5684-67.0235C48.5235-67.0235 47.6138-66.4658 46.8242-65.7285L29.3975-48.7891C29.0205-48.4121 28.5459-48.2656 27.8443-48.2656L15.6978-48.2656C12.4439-48.2656 9.88088-45.7027 9.88088-42.418L9.88088-27.6255C9.88088-24.3896 12.4439-21.8232 15.6978-21.8232L27.8443-21.8232C28.5459-21.8232 29.0205-21.6347 29.3975-21.2578L46.8242-4.79735C47.6001-4.03172 48.5303-3.47752 49.5752-3.47752Z"/>
   </g>
  </g>
 </svg>

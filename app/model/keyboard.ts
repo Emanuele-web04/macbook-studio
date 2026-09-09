@@ -1,12 +1,14 @@
 import * as T from 'three';
 import { mesh, slab } from './geometry';
 import type { Materials } from './materials';
+import { functionKeySymbols } from './function-key-symbols';
 
 type Key = {
   label: string;
   width: number;
   secondary?: string;
   half?: 'up' | 'down';
+  symbol?: (typeof functionKeySymbols)[number];
 };
 const key = (label: string, width = 1, secondary?: string): Key => ({
   label,
@@ -16,9 +18,10 @@ const key = (label: string, width = 1, secondary?: string): Key => ({
 const rows: Key[][] = [
   [
     key('esc', 1.5),
-    ...['☀', '☼', '▣', '⌕', '♩', '☾', '◀◀', '▶Ⅱ', '▶▶', '◁', '◁))', '◁)))'].map(
-      (s, i) => key(s, 1, `F${i + 1}`),
-    ),
+    ...functionKeySymbols.map((symbol) => ({
+      ...key(symbol.key, 1, symbol.key),
+      symbol,
+    })),
     key(''),
   ],
   [
@@ -144,9 +147,20 @@ export function createKeyboard(parent: T.Object3D, materials: Materials) {
         ctx.fillText(k.secondary, cx + 112, cy + 35);
       }
     } else if (row === 0) {
-      ctx.font =
-        k.label === 'esc' ? '23px Arial, sans-serif' : '30px Arial, sans-serif';
-      ctx.fillText(k.label, cx + 64, cy + (k.secondary ? 47 : 83));
+      if (k.symbol) {
+        // Paint Apple's SVG vectors directly into the keyboard atlas, without
+        // a font substitution or an asynchronous image-loading step.
+        const [left, top, width, height] = k.symbol.viewBox;
+        ctx.save();
+        ctx.translate(cx + 64, cy + 47);
+        ctx.scale(32 / width, 32 / height);
+        ctx.translate(-left - width / 2, -top - height / 2);
+        ctx.fill(new Path2D(k.symbol.path));
+        ctx.restore();
+      } else {
+        ctx.font = '23px Arial, sans-serif';
+        ctx.fillText(k.label, cx + 64, cy + 83);
+      }
       if (k.secondary) {
         ctx.font = '14px Arial, sans-serif';
         ctx.fillText(k.secondary, cx + 64, cy + 96);

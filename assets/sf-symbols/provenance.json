@@ -6,58 +6,76 @@
   "processing": "Regular-S monochrome subpaths selected unchanged from Apple SVG exports; template artboard removed and viewport centered. No tracing, redraw, raster images, or symbol font shipped.",
   "symbols": [
     {
-      "name": "info.circle",
+      "name": "sun.min",
       "variant": "Regular-S",
-      "originalSha256": "194cac2f42c96708629bdb8feb5478787aa2bab70a7ff8028d615a156f4a43ca",
+      "originalSha256": "46546486212cdfad782551e5a137bdecbcc3fc426345992a69cbf1e90119530f",
       "pathCount": 2
     },
     {
-      "name": "arrow.up.left.and.arrow.down.right",
+      "name": "sun.max",
       "variant": "Regular-S",
-      "originalSha256": "793644e5e25e0e47c4f340200c68d6415a3b662a91891420269aa335ddecde58",
-      "pathCount": 1
-    },
-    {
-      "name": "arrow.down.right.and.arrow.up.left",
-      "variant": "Regular-S",
-      "originalSha256": "76f5f17c0e864e9319c9d0c53cb3f174043af5dfadd7d282bc8d3d164a790c0c",
-      "pathCount": 1
-    },
-    {
-      "name": "view.3d",
-      "variant": "Regular-S",
-      "originalSha256": "427f1838578c606138072a2cdb0024e7fa0e1bc04ad73b8afe62b0184d25218b",
+      "originalSha256": "3299104e324178cf379518e869cd6f9df91ca845066855014413eacb1e884366",
       "pathCount": 2
     },
     {
-      "name": "rotate.3d",
+      "name": "rectangle.3.group",
       "variant": "Regular-S",
-      "originalSha256": "2f5256e158238c444859d2b152f4d531911590f69d961c79eb61f52ae6186215",
+      "originalSha256": "8e0bc29c0b7df5a1682e962602b7a59d75d550578357fc4e535a62beed20bfee",
+      "pathCount": 3
+    },
+    {
+      "name": "magnifyingglass",
+      "variant": "Regular-S",
+      "originalSha256": "ee8be0e2bbfffb876175e1860f25076ff0ba5e232672ce219281842aa1660140",
       "pathCount": 1
     },
     {
-      "name": "laptopcomputer",
+      "name": "microphone",
       "variant": "Regular-S",
-      "originalSha256": "24051d52305602dbeff3f62573d41f2451606ba9232067541bcafcce46cbf5f0",
+      "originalSha256": "7cf2a54429c4abb24aabcc9e053c08924b96baa42a92c248323b8aa4339b9289",
+      "pathCount": 1
+    },
+    {
+      "name": "moon",
+      "variant": "Regular-S",
+      "originalSha256": "1b8178ccc357c342fef609c356b11b40df1ac172bd9d4f6ebd9672731f64a1e7",
+      "pathCount": 1
+    },
+    {
+      "name": "backward.fill",
+      "variant": "Regular-S",
+      "originalSha256": "9efc70ba484d4f6fab8767b0785d317d481f48d98d6b445501170635599aca06",
+      "pathCount": 1
+    },
+    {
+      "name": "playpause.fill",
+      "variant": "Regular-S",
+      "originalSha256": "0ad9e936fe6485b338e9d2eec63ce0b75e82a2cead3d0408a9f828e708520181",
+      "pathCount": 1
+    },
+    {
+      "name": "forward.fill",
+      "variant": "Regular-S",
+      "originalSha256": "c631869a4d026e1998312fa5227d2eb24d13e014dbd820ae7e2ad8adba7a3a6b",
+      "pathCount": 1
+    },
+    {
+      "name": "speaker.slash.fill",
+      "variant": "Regular-S",
+      "originalSha256": "83cf4cfee48dfb9e53ece5e4f1454d6c2f0b43b869723549a5fa38fc652c523a",
+      "pathCount": 3
+    },
+    {
+      "name": "speaker.wave.1.fill",
+      "variant": "Regular-S",
+      "originalSha256": "f123119113b6af32e9a9e7220ad8fffc65b61368cbc863551650fa4bd2512ea2",
       "pathCount": 2
     },
     {
-      "name": "minus",
+      "name": "speaker.wave.3.fill",
       "variant": "Regular-S",
-      "originalSha256": "fec9454b49f04df792c7e5d9914c6682f364f3f64d0dcbb71d89576dff801c33",
-      "pathCount": 1
-    },
-    {
-      "name": "plus",
-      "variant": "Regular-S",
-      "originalSha256": "c3cc20903aea212ac0bbea577df894e42072afdea0293321c0b572db2f46b739",
-      "pathCount": 1
-    },
-    {
-      "name": "arrow.counterclockwise",
-      "variant": "Regular-S",
-      "originalSha256": "6c16a31d5b85c8b3473e54ff72e9b9c86736dfa0f93a50322cbf186915c654e5",
-      "pathCount": 1
+      "originalSha256": "8dc6f9782e96e9ddf857b74e2dd22dbec8d00d2579a17bcd4fb2cd83493a99e2",
+      "pathCount": 4
     }
   ]
 }
