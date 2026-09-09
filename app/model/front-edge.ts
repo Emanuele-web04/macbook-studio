@@ -1,4 +1,5 @@
 import * as T from 'three';
+import { CORNER_RADIUS, BODY_PROFILE, wallProfile } from './chassis-profile';
 
 // A sampled aluminum profile produces a continuous rounded highlight, rather
 // than the flat vertical face of a box. The central scoop is part of the profile.
@@ -7,27 +8,15 @@ export function frontEdge(width: number, depth: number) {
     around = 28,
     positions: number[] = [],
     indices: number[] = [];
-  const half = width / 2 - 0.075,
-    bottom = 0.027;
+  const half = width / 2 - CORNER_RADIUS,
+    bottom = BODY_PROFILE.bottom;
   for (let i = 0; i <= across; i++) {
     const x = -half + (2 * half * i) / across;
     const transition = T.MathUtils.smoothstep(Math.abs(x), 0.236, 0.286);
     const top = T.MathUtils.lerp(0.102, 0.128, transition);
     for (let j = 0; j <= around; j++) {
       const y = bottom + ((top - bottom) * j) / around;
-      const bottomRadius = 0.016,
-        topRadius = 0.004;
-      let inset = 0;
-      if (y < bottom + bottomRadius)
-        inset =
-          bottomRadius -
-          Math.sqrt(
-            Math.max(0, bottomRadius ** 2 - (y - bottom - bottomRadius) ** 2),
-          );
-      if (y > top - topRadius)
-        inset =
-          topRadius -
-          Math.sqrt(Math.max(0, topRadius ** 2 - (y - top + topRadius) ** 2));
+      const { inset } = wallProfile(y, top);
       positions.push(x, y, depth / 2 - inset);
       if (i < across && j < around) {
         const a = i * (around + 1) + j,

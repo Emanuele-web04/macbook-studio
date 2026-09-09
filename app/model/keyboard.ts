@@ -92,7 +92,7 @@ export function createKeyboard(parent: T.Object3D, materials: Materials) {
       signature = `${width}:${h}`;
     let geometry = geometries.get(signature);
     if (!geometry) {
-      geometry = slab(width, h, 0.009, 0.012, 0.002);
+      geometry = slab(width, h, 0.009, 0.019, 0.003);
       geometries.set(signature, geometry);
     }
     mesh(
@@ -225,8 +225,11 @@ export function createSpeakers(parent: T.Object3D) {
   const material = new T.ShaderMaterial({
     transparent: true,
     depthWrite: false,
+    polygonOffset: true,
+    polygonOffsetFactor: -1,
+    polygonOffsetUnits: -1,
     uniforms: {
-      spacing: { value: new T.Vector2(0.198 / 0.0075, 1.07 / 0.0075) },
+      spacing: { value: new T.Vector2(0.336 / 0.0048, 1.112 / 0.0048) },
     },
     vertexShader: `varying vec2 vUv; void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}`,
     fragmentShader: `varying vec2 vUv; uniform vec2 spacing;
@@ -243,11 +246,11 @@ export function createSpeakers(parent: T.Object3D) {
     const speaker = mesh(
       parent,
       side < 0 ? 'Left speaker perforations' : 'Right speaker perforations',
-      new T.PlaneGeometry(0.198, 1.07),
+      new T.PlaneGeometry(0.336, 1.112),
       material,
-      side * 1.545,
+      side * 1.5925,
       0.1281,
-      -0.445,
+      -0.443,
     );
     speaker.rotation.x = -Math.PI / 2;
     speaker.castShadow = false;

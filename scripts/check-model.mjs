@@ -110,6 +110,37 @@ assert.equal(
   0,
   'The bezel must not cover the display aperture',
 );
+for (const name of [
+  'Left speaker perforations',
+  'Right speaker perforations',
+]) {
+  const bounds = new T.Box3().setFromObject(laptop.root.getObjectByName(name));
+  const dimensions = bounds.getSize(new T.Vector3());
+  assert.ok(
+    dimensions.x > 0.33 && dimensions.z > 1.1,
+    'Grilles must fill the columns beside the keyboard',
+  );
+  assert.ok(
+    Math.abs(bounds.getCenter(new T.Vector3()).x) - dimensions.x / 2 >
+      2.813 / 2,
+    'Speaker holes must remain outside the keyboard recess',
+  );
+}
+const cap = laptop.root.getObjectByName('Key Q').geometry;
+const normals = cap.getAttribute('normal');
+let curvedNormals = 0;
+for (let i = 0; i < normals.count; i++) {
+  const n = new T.Vector3().fromBufferAttribute(normals, i);
+  assert.ok(
+    Math.abs(n.length() - 1) < 0.00001,
+    'Rounded keycap normals must remain normalized',
+  );
+  if (n.y > 0.05 && n.y < 0.95) curvedNormals++;
+}
+assert.ok(
+  curvedNormals > 100,
+  'Key shoulders must use a smooth curved profile',
+);
 const contact = new T.Vector3(1, -0.002, 2.38);
 laptop.setLid(0);
 laptop.root.updateMatrixWorld(true);

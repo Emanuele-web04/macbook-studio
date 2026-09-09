@@ -51,6 +51,7 @@ The production build targets Cloudflare Workers. `npm start` previews it locally
 | `app/model/display.ts` | Original locally drawn screen artwork |
 | `app/model/dock.ts` | Desktop icon studies drawn from simple Canvas paths |
 | `app/model/front-edge.ts` | Curved aluminum front profile and finger scoop |
+| `app/model/chassis-profile.ts` | Continuous shoulder, side, and corner profiles |
 | `app/model/motion.ts` | Finite lid animation with exact contact |
 | `app/scene.tsx` | Studio lighting, camera, rendering, and resource cleanup |
 | `app/page.tsx` | Viewer controls and immersive mode |

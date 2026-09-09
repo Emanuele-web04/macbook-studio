@@ -1,6 +1,7 @@
 import * as T from 'three';
 import { extrude, hole, mesh, outline } from './geometry';
 import type { Materials } from './materials';
+import { CORNER_RADIUS, curvedWall, profileHeights } from './chassis-profile';
 
 type Port = {
   name: string;
@@ -41,9 +42,9 @@ const right: Port[] = [
 export function createPorts(parent: T.Object3D, m: Materials) {
   for (const side of [-1, 1]) {
     const ports = side < 0 ? left : right;
-    const wall = outline(2.321, 0.095, 0.006);
+    const wall = outline(2.481 - 2 * CORNER_RADIUS, 0.071, 0.001);
     for (const p of ports)
-      hole(wall, p.width, p.height, p.radius, -p.z, 0.0065);
+      hole(wall, p.width, p.height, p.radius, -p.z, -0.0045);
     // These are holes through the aluminum side wall, with sockets recessed behind them.
     const geometry = extrude(wall, 0.019, 0);
     geometry.rotateY(Math.PI / 2);
@@ -53,9 +54,24 @@ export function createPorts(parent: T.Object3D, m: Materials) {
       geometry,
       m.metal,
       side * 1.769,
-      0.0745,
+      0.0855,
       0,
     );
+    const ys = profileHeights(),
+      limit = 2.481 / 2 - CORNER_RADIUS;
+    for (const heights of [ys.slice(0, 13), ys.slice(13)]) {
+      const rounding = curvedWall(
+        (t) => ({
+          x: side * 1.7785,
+          z: -limit + 2 * limit * t,
+          nx: side,
+          nz: 0,
+        }),
+        1,
+        heights,
+      );
+      mesh(parent, 'Rounded side shoulder', rounding, m.metal);
+    }
     for (const p of ports) {
       const back = extrude(
         outline(p.width + 0.003, p.height + 0.003, p.radius),

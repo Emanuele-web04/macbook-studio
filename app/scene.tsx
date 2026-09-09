@@ -126,6 +126,7 @@ const MacBookScene = forwardRef<SceneHandle, Props>(
         far: 20,
       });
       key.shadow.normalBias = 0.001;
+      key.shadow.radius = 5;
       key.shadow.bias = -0.000006;
       scene.add(key);
       const fill = new T.DirectionalLight(0xffffff, 0.5);
@@ -133,7 +134,7 @@ const MacBookScene = forwardRef<SceneHandle, Props>(
       scene.add(fill);
       const floor = new T.Mesh(
         new T.PlaneGeometry(100, 100),
-        new T.ShadowMaterial({ color: 0x48515b, opacity: 0.13 }),
+        new T.ShadowMaterial({ color: 0x48515b, opacity: 0.08 }),
       );
       floor.rotation.x = -Math.PI / 2;
       floor.position.y = -0.002;

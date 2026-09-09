@@ -5,6 +5,7 @@ import { createKeyboard, createSpeakers } from './keyboard';
 import { createPorts } from './ports';
 import { createDisplayTexture } from './display';
 import { frontEdge } from './front-edge';
+import { CORNER_RADIUS, curvedWall, profileHeights } from './chassis-profile';
 
 export const DIMENSIONS = {
   width: 3.557,
@@ -44,8 +45,9 @@ function emblem() {
 }
 
 function frontDeckOutline() {
-  const { width: w, depth: d } = DIMENSIONS,
-    r = 0.075,
+  const w = DIMENSIONS.width - 0.014,
+    d = DIMENSIONS.depth - 0.014,
+    r = CORNER_RADIUS - 0.007,
     x = -w / 2,
     y = -d / 2;
   const s = new T.Shape();
@@ -55,13 +57,13 @@ function frontDeckOutline() {
   s.lineTo(0.239, y + 0.029);
   s.bezierCurveTo(0.27, y + 0.026, 0.27, y, 0.286, y);
   s.lineTo(w / 2 - r, y);
-  s.quadraticCurveTo(w / 2, y, w / 2, y + r);
+  s.absarc(w / 2 - r, y + r, r, -Math.PI / 2, 0, false);
   s.lineTo(w / 2, d / 2 - r);
-  s.quadraticCurveTo(w / 2, d / 2, w / 2 - r, d / 2);
+  s.absarc(w / 2 - r, d / 2 - r, r, 0, Math.PI / 2, false);
   s.lineTo(x + r, d / 2);
-  s.quadraticCurveTo(x, d / 2, x, d / 2 - r);
+  s.absarc(x + r, d / 2 - r, r, Math.PI / 2, Math.PI, false);
   s.lineTo(x, y + r);
-  s.quadraticCurveTo(x, y, x + r, y);
+  s.absarc(x + r, y + r, r, Math.PI, Math.PI * 1.5, false);
   return s;
 }
 
@@ -83,7 +85,7 @@ export function createLaptop() {
   mesh(
     root,
     'Bottom cover',
-    slab(w - 0.01, d - 0.01, 0.016, 0.074, 0.005),
+    slab(w - 0.046, d - 0.046, 0.016, CORNER_RADIUS - 0.023, 0.007),
     m.metal,
     0,
     0.024,
@@ -131,33 +133,24 @@ export function createLaptop() {
     0.69,
   );
 
-  // Rounded vertical corners join independent front, rear and port-bearing side walls.
-  const r = 0.075;
+  const r = CORNER_RADIUS;
   for (const sx of [-1, 1])
     for (const sz of [-1, 1]) {
-      const points: T.Vector2[] = [];
       const cx = sx * (w / 2 - r),
-        cz = sz * (d / 2 - r),
-        start =
-          sx > 0 ? (sz > 0 ? 0 : -Math.PI / 2) : sz > 0 ? Math.PI / 2 : Math.PI;
-      for (let i = 0; i <= 20; i++) {
-        const a = start + (i * Math.PI) / 40;
-        points.push(
-          new T.Vector2(cx + r * Math.cos(a), -(cz + r * Math.sin(a))),
-        );
-      }
-      for (let i = 20; i >= 0; i--) {
-        const a = start + (i * Math.PI) / 40;
-        points.push(
-          new T.Vector2(
-            cx + (r - 0.022) * Math.cos(a),
-            -(cz + (r - 0.022) * Math.sin(a)),
-          ),
-        );
-      }
-      const g = extrude(new T.Shape(points), 0.095);
-      g.rotateX(-Math.PI / 2);
-      mesh(root, 'Rounded unibody corner', g, m.metal, 0, 0.0745, 0);
+        cz = sz * (d / 2 - r);
+      const start =
+        sx > 0 ? (sz > 0 ? 0 : -Math.PI / 2) : sz > 0 ? Math.PI / 2 : Math.PI;
+      const geometry = curvedWall(
+        (t) => {
+          const angle = start + (t * Math.PI) / 2,
+            nx = Math.cos(angle),
+            nz = Math.sin(angle);
+          return { x: cx + r * nx, z: cz + r * nz, nx, nz };
+        },
+        32,
+        profileHeights(),
+      );
+      mesh(root, 'Rounded unibody corner', geometry, m.metal);
     }
   mesh(root, 'Front wall and finger scoop', frontEdge(w, d), m.metal);
   const scoop = new T.Shape();
@@ -172,7 +165,7 @@ export function createLaptop() {
   mesh(
     root,
     'Rear wall',
-    new T.BoxGeometry(w - 0.15, 0.071, 0.02),
+    new T.BoxGeometry(w - 2 * CORNER_RADIUS, 0.071, 0.02),
     m.metal,
     0,
     0.063,
@@ -264,7 +257,7 @@ export function createLaptop() {
   mesh(
     hinge,
     'Aluminum display enclosure',
-    slab(w, d, 0.034, 0.071, 0.006),
+    slab(w, d, 0.034, CORNER_RADIUS, 0.011),
     m.metal,
     0,
     0.021,
@@ -272,8 +265,8 @@ export function createLaptop() {
   );
   // Rubber perimeter is the physical contact surface. It moves with the lid;
   // there is no delayed overlay, screen-space line, or artificial closed-state fade.
-  const gasket = outline(w - 0.034, d - 0.034, 0.061);
-  hole(gasket, w - 0.062, d - 0.062, 0.052, 0, 0);
+  const gasket = outline(w - 0.034, d - 0.034, CORNER_RADIUS - 0.017);
+  hole(gasket, w - 0.062, d - 0.062, CORNER_RADIUS - 0.031, 0, 0);
   const gasketGeometry = extrude(gasket, 0.002);
   gasketGeometry.rotateX(-Math.PI / 2);
   mesh(
@@ -287,7 +280,7 @@ export function createLaptop() {
   );
   // A real bezel frame leaves the display aperture empty. Stacking a full
   // glass slab behind an almost coplanar screen causes depth-buffer artifacts.
-  const bezel = outline(w - 0.056, d - 0.056, 0.054);
+  const bezel = outline(w - 0.056, d - 0.056, CORNER_RADIUS - 0.028);
   hole(bezel, 3.456, 2.245, 0.042, 0, -(1.2245 - center));
   const bezelGeometry = extrude(bezel, 0.003);
   bezelGeometry.rotateX(-Math.PI / 2);
