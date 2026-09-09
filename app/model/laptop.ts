@@ -331,7 +331,7 @@ export function createLaptop() {
   for (const shape of emblem()) {
     const geometry = new T.ShapeGeometry(shape, 40);
     geometry.rotateX(Math.PI / 2);
-    mesh(
+    const logo = mesh(
       hinge,
       'Hand-constructed lid emblem',
       geometry,
@@ -340,6 +340,7 @@ export function createLaptop() {
       0.0381,
       center - 0.027,
     );
+    logo.scale.x = -1;
   }
   function setLid(degrees: number) {
     hinge.rotation.x = -T.MathUtils.degToRad(
