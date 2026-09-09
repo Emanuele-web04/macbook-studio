@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Maximize2, Minimize2, Minus, Plus, RotateCcw, Rotate3d, Laptop, Info, View } from 'lucide-react';
+import { SfSymbol } from './sf-symbol';
 import { Popover, PopoverContent, PopoverTitle, PopoverTrigger } from '@/components/ui/popover';
 import { Slider } from '@/components/ui/slider';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -74,7 +74,7 @@ export default function Home() {
       <div className="identity"><h1>MacBook Pro</h1><p>16″ · M5 Pro · {finishLabel}</p></div>
       <div className="top-actions viewer-controls">
         {!immersive && <Popover {...popoverState('info')}>
-          <PopoverTrigger className="icon-button quiet" aria-label="About this model" title="About"><Info size={19}/></PopoverTrigger>
+          <PopoverTrigger className="icon-button quiet" aria-label="About this model" title="About"><SfSymbol name="info.circle" size={19}/></PopoverTrigger>
           <PopoverContent className="glass-popover info-popover" align="end" sideOffset={12}>
             <PopoverTitle>MacBook Pro 16″</PopoverTitle>
             <p className="configuration">M5 Pro · {finishLabel} · US keyboard</p>
@@ -83,7 +83,7 @@ export default function Home() {
           </PopoverContent>
         </Popover>}
         <button className={`immersive-button ${immersive ? 'exit-button' : ''}`} onClick={toggleImmersive} aria-label={immersive ? 'Exit immersive mode' : 'Enter fullscreen immersive mode'} aria-pressed={immersive} title={immersive ? 'Exit · Esc' : 'Immersive mode'}>
-          {immersive ? <Minimize2 size={18}/> : <Maximize2 size={17}/>}<span>{immersive ? 'Exit' : 'Immersive'}</span>
+          {immersive ? <SfSymbol name="arrow.down.right.and.arrow.up.left" size={18}/> : <SfSymbol name="arrow.up.left.and.arrow.down.right" size={17}/>}<span>{immersive ? 'Exit' : 'Immersive'}</span>
         </button>
       </div>
     </header>
@@ -95,15 +95,15 @@ export default function Home() {
       </RadioGroup>
         <span className="dock-divider"/>
         <Popover {...popoverState('views')}>
-          <PopoverTrigger className="icon-button" aria-label="Change view" title="View"><View size={21}/></PopoverTrigger>
+          <PopoverTrigger className="icon-button" aria-label="Change view" title="View"><SfSymbol name="view.3d" size={21}/></PopoverTrigger>
           <PopoverContent className="glass-popover view-popover" side="top" sideOffset={16}>
             <PopoverTitle>View</PopoverTitle>
             <div className="view-options">{views.map(item => <button key={item.name} onClick={() => chooseView(item.name)} className={view === item.name ? 'selected' : ''} aria-pressed={view === item.name}>{item.label}</button>)}</div>
           </PopoverContent>
         </Popover>
-        <button className={`icon-button ${spin ? 'active' : ''}`} onClick={() => setSpin(!spin)} aria-label={spin ? 'Stop rotation' : 'Rotate automatically'} aria-pressed={spin} title="Auto-rotate"><Rotate3d size={21}/></button>
+        <button className={`icon-button ${spin ? 'active' : ''}`} onClick={() => setSpin(!spin)} aria-label={spin ? 'Stop rotation' : 'Rotate automatically'} aria-pressed={spin} title="Auto-rotate"><SfSymbol name="rotate.3d" size={21}/></button>
         <Popover {...popoverState('lid')}>
-          <PopoverTrigger className="icon-button" aria-label="Open or close the lid" title="Lid"><Laptop size={21}/></PopoverTrigger>
+          <PopoverTrigger className="icon-button" aria-label="Open or close the lid" title="Lid"><SfSymbol name="laptopcomputer" size={21}/></PopoverTrigger>
           <PopoverContent className="glass-popover lid-popover" side="top" sideOffset={16}>
             <div className="panel-heading"><PopoverTitle>Lid</PopoverTitle><output>{lid}°</output></div>
             <Slider aria-label="Lid angle" min={0} max={135} step={1} value={[lid]} onValueChange={value => setLid(Array.isArray(value) ? value[0] : value)}/>
@@ -111,10 +111,10 @@ export default function Home() {
           </PopoverContent>
         </Popover>
         <span className="dock-divider"/>
-        <button className="icon-button" aria-label="Zoom out" title="Zoom out" onClick={() => scene.current?.zoom(false)}><Minus size={20}/></button>
-        <button className="icon-button" aria-label="Zoom in" title="Zoom in" onClick={() => scene.current?.zoom(true)}><Plus size={20}/></button>
+        <button className="icon-button" aria-label="Zoom out" title="Zoom out" onClick={() => scene.current?.zoom(false)}><SfSymbol name="minus" size={20}/></button>
+        <button className="icon-button" aria-label="Zoom in" title="Zoom in" onClick={() => scene.current?.zoom(true)}><SfSymbol name="plus" size={20}/></button>
         <span className="dock-divider"/>
-        <button className="icon-button" aria-label="Reset view" title="Reset" onClick={reset}><RotateCcw size={18}/></button>
+        <button className="icon-button" aria-label="Reset view" title="Reset" onClick={reset}><SfSymbol name="arrow.counterclockwise" size={18}/></button>
       </div>
       <p className="gesture-hint">Drag to rotate. Scroll to zoom.</p>
     </div>

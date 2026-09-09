@@ -1,0 +1,63 @@
+{
+  "source": "https://developer.apple.com/sf-symbols/",
+  "download": "https://devimages-cdn.apple.com/design/resources/download/SF-Symbols-8.dmg?2=",
+  "exporter": "SF Symbols 8 beta / Apple Native CoreSVG 341",
+  "exportDate": "2026-09-09",
+  "processing": "Regular-S monochrome subpaths selected unchanged from Apple SVG exports; template artboard removed and viewport centered. No tracing, redraw, raster images, or symbol font shipped.",
+  "symbols": [
+    {
+      "name": "info.circle",
+      "variant": "Regular-S",
+      "originalSha256": "194cac2f42c96708629bdb8feb5478787aa2bab70a7ff8028d615a156f4a43ca",
+      "pathCount": 2
+    },
+    {
+      "name": "arrow.up.left.and.arrow.down.right",
+      "variant": "Regular-S",
+      "originalSha256": "793644e5e25e0e47c4f340200c68d6415a3b662a91891420269aa335ddecde58",
+      "pathCount": 1
+    },
+    {
+      "name": "arrow.down.right.and.arrow.up.left",
+      "variant": "Regular-S",
+      "originalSha256": "76f5f17c0e864e9319c9d0c53cb3f174043af5dfadd7d282bc8d3d164a790c0c",
+      "pathCount": 1
+    },
+    {
+      "name": "view.3d",
+      "variant": "Regular-S",
+      "originalSha256": "427f1838578c606138072a2cdb0024e7fa0e1bc04ad73b8afe62b0184d25218b",
+      "pathCount": 2
+    },
+    {
+      "name": "rotate.3d",
+      "variant": "Regular-S",
+      "originalSha256": "2f5256e158238c444859d2b152f4d531911590f69d961c79eb61f52ae6186215",
+      "pathCount": 1
+    },
+    {
+      "name": "laptopcomputer",
+      "variant": "Regular-S",
+      "originalSha256": "24051d52305602dbeff3f62573d41f2451606ba9232067541bcafcce46cbf5f0",
+      "pathCount": 2
+    },
+    {
+      "name": "minus",
+      "variant": "Regular-S",
+      "originalSha256": "fec9454b49f04df792c7e5d9914c6682f364f3f64d0dcbb71d89576dff801c33",
+      "pathCount": 1
+    },
+    {
+      "name": "plus",
+      "variant": "Regular-S",
+      "originalSha256": "c3cc20903aea212ac0bbea577df894e42072afdea0293321c0b572db2f46b739",
+      "pathCount": 1
+    },
+    {
+      "name": "arrow.counterclockwise",
+      "variant": "Regular-S",
+      "originalSha256": "6c16a31d5b85c8b3473e54ff72e9b9c86736dfa0f93a50322cbf186915c654e5",
+      "pathCount": 1
+    }
+  ]
+}
