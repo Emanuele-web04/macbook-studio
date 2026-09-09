@@ -1,12 +1,19 @@
 {
-  "source": "https://www.apple.com/105/media/us/macbook-pro/2023/232a2dbf-5898-4fd1-a350-6a7c5c2e31c9/ar/macbook_pro_m3_pro_16_silver.usdz",
-  "model": "Apple MacBook Pro 16-inch M3 Pro (2023), silver, US keyboard",
-  "requestedModel": "MacBook Pro 16-inch M5 Pro",
-  "geometry": "Original Apple geometry and material maps; converted to glTF, calibrated to 355.7 x 248.1 x 16.8 mm, with an articulated lid. Not a certified M5 CAD model.",
-  "closedDimensionsMm": [
-    355.7,
-    16.800000000000008,
-    248.1
+  "model": "Independent photographic reconstruction of a 16-inch MacBook Pro",
+  "implementation": "Geometry created at runtime in app/model with Three.js primitives, extrusions and original Bezier paths. No imported model or Apple geometry.",
+  "materials": "Procedural metal grain and speaker perforations; locally drawn key labels and original display artwork.",
+  "reference_use": "Photographs supplied by the user were viewed as visual references only. They are not distributed or fetched by the viewer.",
+  "dimensions_mm": {
+    "width": 355.7,
+    "depth": 248.1,
+    "closed_height": 16.8
+  },
+  "keyboard": "US ANSI, 78 keys",
+  "finishes": [
+    "Silver",
+    "Space Gray"
   ],
-  "meshes": 61
+  "limitations": "Photographic reconstruction, not certified CAD. Internal hardware, exact manufacturing profiles and M5-specific internal details are not represented.",
+  "source_license": "MIT",
+  "trademarks": "Apple and MacBook are trademarks of Apple Inc. This project is independent and unofficial."
 }

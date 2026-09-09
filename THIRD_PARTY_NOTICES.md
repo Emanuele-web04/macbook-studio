@@ -1,14 +1,12 @@
 # Third-party notices
 
-## Apple model and images
+## Model and artwork provenance
 
-The repository's MIT license covers the application source code, not Apple's model, textures, product images, logos, or trademarks. These media files are excluded from this Git repository.
+The current viewer constructs its geometry and materials in `app/model`. It contains no imported Apple model, converted geometry, photographic texture, wallpaper download, or macOS icon pack. Key legends and screen artwork are drawn locally in code. User-provided photographs were used only as visual references and are not distributed.
 
-`npm run assets` retrieves the converted demonstration model and reference image from the public demo into ignored local files. Downloading these files does not grant an open-source license to the assets. Review applicable permissions before redistributing or using them in another project.
+The original implementation is covered by the repository's MIT license. This does not license Apple's trademarks or the underlying product design. Apple and MacBook are trademarks of Apple Inc. The project is independent and is not affiliated with or endorsed by Apple. The reconstructed dimensions and details are a visual study, not certified manufacturing data.
 
-The model originates from Apple's [2023 MacBook Pro 16-inch M3 Pro silver AR asset](https://www.apple.com/105/media/us/macbook-pro/2023/232a2dbf-5898-4fd1-a350-6a7c5c2e31c9/ar/macbook_pro_m3_pro_16_silver.usdz). Its original geometry and textures were converted to GLB, with an articulated lid and calibrated dimensions. See `public/models/provenance.json` for details. Space Gray is a material visualization; the displayed M5 Pro configuration is not a certified M5 CAD model.
-
-This project is independent and is not affiliated with or endorsed by Apple.
+Earlier revisions referenced a separate Apple demonstration asset through a download script. That loader and download workflow have been removed from the current version.
 
 ## UI components and dependencies
 

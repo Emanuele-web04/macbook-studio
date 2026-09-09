@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ArrowUpRight, Maximize2, Minimize2, Minus, Plus, RotateCcw, Rotate3d, Laptop, Info, View } from 'lucide-react';
+import { Maximize2, Minimize2, Minus, Plus, RotateCcw, Rotate3d, Laptop, Info, View } from 'lucide-react';
 import { Popover, PopoverContent, PopoverTitle, PopoverTrigger } from '@/components/ui/popover';
 import { Slider } from '@/components/ui/slider';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -67,7 +67,7 @@ export default function Home() {
 
   return <main className={`studio ${immersive ? 'immersive' : ''} ${awake ? '' : 'hud-asleep'}`} onPointerMove={wakeControls} onPointerDown={wakeControls} onFocusCapture={wakeControls}>
     <section className="viewport" aria-label="Interactive MacBook Pro">
-      <MacBookScene ref={scene} lid={lid} spin={spin} finish={finish} onReady={() => setReady(true)} onError={() => setError(true)}/>
+      <MacBookScene ref={scene} lid={lid} spin={spin} finish={finish} onReady={() => setReady(true)} onError={() => { setReady(false); setError(true); }}/>
       {!ready && <div className="scene-status" role="status">{error ? 'Unable to load the 3D model. Reload the page with WebGL enabled.' : <><span className="loading-ring"/>Loading…</>}</div>}
     </section>
     <header className="viewer-header">
@@ -78,9 +78,8 @@ export default function Home() {
           <PopoverContent className="glass-popover info-popover" align="end" sideOffset={12}>
             <PopoverTitle>MacBook Pro 16″</PopoverTitle>
             <p className="configuration">M5 Pro · {finishLabel} · US keyboard</p>
-            <img src="/reference.jpg" alt="Apple reference photo of the silver MacBook Pro"/>
-            <p className="provenance">Original Apple 16″ geometry from 2023, scaled to 355.7 × 248.1 × 16.8 mm. Space Gray is a finish visualization. M5-specific details have not been verified.</p>
-            <a href="https://www.apple.com/macbook-pro/specs/" target="_blank" rel="noreferrer">Apple reference <ArrowUpRight size={14}/></a>
+            <p className="provenance">Independently modeled in code from photographic references. 355.7 × 248.1 × 16.8 mm. Original geometry, materials, and screen artwork.</p>
+            <p className="provenance">An unofficial visual study. Not affiliated with Apple.</p>
           </PopoverContent>
         </Popover>}
         <button className={`immersive-button ${immersive ? 'exit-button' : ''}`} onClick={toggleImmersive} aria-label={immersive ? 'Exit immersive mode' : 'Enter fullscreen immersive mode'} aria-pressed={immersive} title={immersive ? 'Exit · Esc' : 'Immersive mode'}>
